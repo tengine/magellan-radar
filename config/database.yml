@@ -14,8 +14,8 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
-  socket: /tmp/mysql.sock
+  password: dragonball
+  host: <%= ENV['USER_PORT_3306_TCP_ADDR'] %>
 
 development:
   <<: *default
