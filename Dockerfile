@@ -9,5 +9,7 @@ VOLUME /usr/src/app/log
 
 RUN bundle install --system
 
+RUN gem install rabbitmq_http_api_client redis json
+
 CMD ["bundle", "exec", "magellan-rails"]
 
