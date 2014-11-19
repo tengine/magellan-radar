@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   resources :users
 
   post 'locations/:user_name', controller: 'locations', action: 'location', as: 'set_location'
-  # TODO delete
-  get 'locations/location/:user_name', controller: 'locations', action: 'location'
 
   put 'info/:user_name', controller: 'users', action: 'update_user', as: 'update_user'
   get 'info/:user_name', controller: 'users', action: 'get_user', as: 'get_user'
