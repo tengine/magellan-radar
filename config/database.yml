@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password: dragonball
-  host: <%= ENV['USER_PORT_3306_TCP_ADDR'] %>
+  host: <%= ENV['DB_ADDR'] %>
 
 development:
   <<: *default
