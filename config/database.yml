@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: magellan-radar_production
-  username: magellan-radar
+  username: root
   password: <%= ENV['MAGELLAN-RADAR_DATABASE_PASSWORD'] %>
