@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
     location = Location.find_or_create_by(user_id: user.id)
 
     #location.update(latitude: 35.658704, longitude: 139.745408)
-    location.update(latitude: params[:latitude], longitude: params[:lognitude])
+    location.update(latitude: params[:latitude], longitude: params[:longitude])
 
     render text: 'ok'
   end
@@ -15,7 +15,14 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @locations = Location.all.map do |l|
+      {
+        user_id: l.user.name,
+        latitude: l.latitude,
+        longitude: l.longitude,
+      }
+    end
+    render json: @locations
   end
 
   # GET /locations/1
